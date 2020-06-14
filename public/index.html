@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Zen Quote</title>
+<meta charset="UTF-8">
+<meta name="description" content="Zen Quote">
+<meta name="keywords" content="zen, wisdom, buddhism, stoic, stoicism, quote">
+<meta name="author" content="Magnus Leksell">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="css/zen.css">
+<script src="scripts/zen.js"></script>
+
+<body onload='showQuote()'>
+    <div id="menubutton">
+        <a id="toggle-link" href="javascript:void(0)" onclick="toggleMenu()" title="Show menu">
+            <i id="rotate" class="fas fa-chevron-down fa-fw"></i>
+        </a>
+    </div>
+    <div id="topnav" class="topnav topnav-bg">
+        <div class="toolbar">
+            <a href="javascript:void(0)" onclick="showRandomQuote()" title="Random quote">
+                <i class="fas fa-random fa-fw"></i>
+            </a><a href="javascript:void(0)" onclick="showAuthors()" title="List authors">
+                <i class="fas fa-list-ul fa-fw"></i>
+            </a><a href="javascript:void(0)" onclick="showAbout()" title="About">
+                <i class="fas fa-info"></i>
+            </a>
+        </div>
+        <div class="title">
+            <span id="title">Zen Quote</span>
+        </div>
+        <div class="search-container">
+            <form onsubmit="searchQuotes(this); return false;">
+                <input type="text" onclick="this.select();" placeholder="Search" name="q" value="">
+            </form>
+        </div>
+    </div>
+    <div id="container" class="container center-aligned"></div>
+</body>
+
+</html>

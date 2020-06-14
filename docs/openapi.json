@@ -1,0 +1,185 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Zen Quotes",
+    "version": "1.0.0",
+    "description": "A HTTP API for retrieving Zen quotes",
+    "contact": {
+      "name": "Magnus Leksell",
+      "email": "magnus@sajberspejs.com",
+      "url": "https://github.com/magnus-leksell/zen-quote"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api",
+      "description": "Local server"
+    }
+  ],
+  "paths": {
+    "/authors": {
+      "get": {
+        "summary": "Returns authors",
+        "responses": {
+          "200": {
+            "description": "All authors or authors matching query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Authors"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "watts"
+            }
+          }
+        ]
+      }
+    },
+    "/quotes/{id}": {
+      "get": {
+        "summary": "Returns a quote",
+        "responses": {
+          "200": {
+            "description": "A quote",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quote"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "example": 123
+            }
+          }
+        ]
+      }
+    },
+    "/quotes/random": {
+      "get": {
+        "summary": "Returns a random quote",
+        "responses": {
+          "200": {
+            "description": "A quote",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quote"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/quotes": {
+      "get": {
+        "summary": "Returns quotes matching query",
+        "responses": {
+          "200": {
+            "description": "Quotes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quotes"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "q": {
+                  "type": "string",
+                  "example": "zen"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "watts"
+                }
+              },
+              "anyOf": [
+                {
+                  "required": [
+                    "q"
+                  ]
+                },
+                {
+                  "required": [
+                    "author"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Author": {
+        "type": "object",
+        "properties": {
+          "author": {
+            "type": "string"
+          }
+        }
+      },
+      "Authors": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Author"
+        }
+      },
+      "Quote": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "author": {
+            "type": "string"
+          },
+          "quote": {
+            "type": "string"
+          }
+        }
+      },
+      "Quotes": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Quote"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "zen-quote",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=zen-quote:* npm run devstart",
+    "build-css": "node-sass --include-path sass ./sass/index.sass ./public/css/zen.css --output-style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magnus-leksell/zen-quote.git"
+  },
+  "keywords": [
+    "zen",
+    "quotes"
+  ],
+  "author": "Magnus Leksell",
+  "email": "magnus@sajberspejs.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/magnus-leksell/zen-quote/issues"
+  },
+  "homepage": "https://github.com/magnus-leksell/zen-quote",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "helmet": "^3.22.0",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "node-sass": "^4.14.1",
+    "sequelize": "^5.21.12",
+    "sqlite3": "^4.2.0",
+    "swagger-ui-express": "^4.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

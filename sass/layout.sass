@@ -1,0 +1,285 @@
+*
+  -moz-appearance: none
+  -webkit-appearance: none
+  appearance: none
+  box-sizing: border-box
+
+html
+  height: 100%
+  overflow-x: hidden
+  width: 100%
+
+body
+  background-color: $default-bg-color
+  color: $default-color
+  font-family: sans-serif
+  font-size: 1.2em
+  font-weight: 300
+  height: 100%
+  margin: 0
+  width: 100%
+
+.title
+  color: $link-hover-color
+  font-size: 1.2em
+
+.center-aligned
+  align-items: center
+  background: none
+  height: 100%
+
+.top-aligned
+  align-items: flex-start
+  padding-bottom: 20px
+  position: absolute
+  top: 50px
+
+.container
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  width: 100%
+
+.rounded
+  -moz-border-radius: 8px
+  -webkit-border-radius: 8px
+  border-radius: 8px
+
+.item
+  width: 360px
+  padding: 0 18px
+  margin: 0
+  text-align: left
+  -webkit-transition: background-color 200ms ease
+  -moz-transition: background-color 200ms ease
+  -o-transition: background-color 200ms ease
+  transition: background-color 200ms ease
+
+  &:hover
+    background-color: rgba($nav-bg-color, 0.8)
+
+a
+  color: $default-color
+  text-decoration: none
+
+  &:link
+    color: $default-color
+
+  &:visited
+    color: $default-color
+
+  &:active
+    color: $default-color
+    text-decoration: underline
+
+  &:hover
+    color: $default-color
+    text-decoration: underline
+
+.hidden
+  display: none
+
+.icon-color
+  color: $link-hover-color
+
+.toolbar
+  float: right
+
+  a
+    color: $link-color
+    text-decoration: none
+
+    &:link
+      color: $link-color
+
+    &:visited
+      color: $link-color
+
+    &:active
+      color: $link-hover-color
+
+    &:hover
+      color: $link-hover-color
+
+.margin--right
+  margin-right: 8px
+
+.author
+  padding: 0
+  margin: 0
+  width: 260px
+
+  a
+    display: block
+    padding: 12px 18px
+    text-decoration: none
+
+#menubutton
+  overflow: hidden
+  position: fixed
+  top: 0
+  z-index: 10
+
+  a
+    display: inline-block
+    color: $link-color
+    text-align: center
+    margin: 6px 6px
+    padding: 6px 6px
+    text-decoration: none
+    background-color: rgba($nav-bg-color, 0.9)
+    -webkit-border-radius: 6px
+    -moz-border-radius: 6px
+    border-radius: 6px
+
+    &:link
+      color: $link-color
+
+    &:visited
+      color: $link-color
+
+    &:active
+      color: $link-hover-color
+
+    &:hover
+      color: $link-hover-color
+
+#toggle-link
+  &.bg
+    background-color: none
+
+#rotate
+  -webkit-transition: transform 200ms linear
+  -moz-transition: transform 200ms linear
+  transition: transform 200ms linear
+
+  &.up
+    border: none
+    -webkit-transform: rotate(-180deg)
+    -moz-transform: rotate(-180deg)
+    -o-transform: rotate(-180deg)
+    transform: rotate(-180deg)
+
+#topnav
+  -webkit-transition: 180ms transform ease-out
+  -moz-transition: 180ms transform ease-out
+  -o-transition: 180ms transform ease-out
+  transition: 180ms transform ease-out
+  -webkit-transform: translateY(-100%)
+  -moz-transform: translateY(-100%)
+  -o-transform: translateY(-100%)
+  transform: translateY(-100%)
+
+  &.displayed
+    -webkit-transition: 150ms transform ease-in
+    -moz-transition: 150ms transform ease-in
+    -o-transition: 150ms transform ease-in
+    transition: 150ms transform ease-in
+    -webkit-transform: translateY(0)
+    -moz-transform: translateY(0)
+    -o-transform: translateY(0)
+    transform: translateY(0)
+
+.topnav-bg
+  background-color: rgba($nav-bg-color, 0.9)
+
+.topnav
+  overflow: hidden
+  position: fixed
+  display: flex
+  flex-wrap: nowrap
+  align-items: center
+  justify-content: space-between
+  top: 0
+  width: 100%
+  border-bottom: 1px solid $border-color
+  z-index: 3
+
+  a
+    display: inline-block
+    color: $link-color
+    text-align: center
+    margin: 6px 6px
+    padding: 6px 6px
+    text-decoration: none
+
+    &:link
+      color: $link-color
+
+    &:visited
+      color: $link-color
+
+    &:active
+      color: $link-hover-color
+
+    &:hover
+      color: $link-hover-color
+
+  .toolbar
+    flex-basis: 33%
+    flex-grow: 1
+    flex-shrink: 1
+    padding-left: 48px
+    text-align: left
+
+  .title
+    flex-basis: 33%
+    flex-grow: 1
+    flex-shrink: 1
+    text-align: center
+
+  .search-container
+    flex-grow: 1
+    flex-basis: 33%
+    text-align: right
+    padding-right: 20px
+
+    form
+      margin: 0
+      padding: 0
+
+  input[type=text]
+    -moz-border-radius: 6px
+    -webkit-border-radius: 6px
+    background-color: $input-bg-color
+    border: none
+    border-radius: 6px
+    color: $link-hover-color
+    display: inline-block
+    font-size: .85em
+    font-weight: 300
+    margin: 0
+    opacity: .9
+    outline: none
+    padding: 6px 6px 6px 6px
+    width: 150px
+
+@media only screen and (min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) 
+  .topnav
+    flex-wrap: wrap
+    align-items: left
+
+    .title
+      display: none
+
+.transbox
+  margin: auto
+  text-align: center
+  width: 440px
+
+.transbox-bg
+  background-color: rgba($nav-bg-color, 0.8)
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) 
+  .transbox-bg
+    -webkit-backdrop-filter: saturate(100%) blur(20px)
+    backdrop-filter: saturate(100%) blur(20px)
+    background-color: rgba($nav-bg-color, 0.7)
+
+.quote
+  display: inline-block
+  margin-bottom: 4px
+  margin-top: 4px
+  position: relative
+  text-align: left
+  width: 360px
