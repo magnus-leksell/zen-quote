@@ -14,9 +14,9 @@ https://github.com/magnus-leksell/zen-quote/
 
     npm install
 
-## Run
+## Start
 
-    npm run devstart
+    npm run start
 
 This starts the server on port 3000. Use a web browser and go to http://localhost:3000/ and enjoy.
 
