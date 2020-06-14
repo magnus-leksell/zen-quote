@@ -20,7 +20,8 @@ This starts the server on port 3000. Use a web browser and go to http://localhos
 
 ## Web user interface
 
-![Zen Quote](./docs/images/zen-quote.png | width=400)
+<a href="./docs/images/zen-quote.png" target="_blank"><img src="./docs/images/zen-quote.png" width="400"></a>
+<a href="./docs/images/authors.png" target="_blank"><img src="./docs/images/authors.png" width="400"></a>
 
 ### `/?id={id}`
 
