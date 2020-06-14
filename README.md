@@ -1,6 +1,6 @@
 # Zen Quote
 
-Zen Quote is a Node.js RESTful API for accessing Zen Quotes from a SQLite3 database. Also provides a web UI that communicates with the API through javascript.
+Zen Quote is a Node.js RESTful API for accessing Zen Quotes from a SQLite3 database. Also provides a web UI that communicates with the API through javascript. It is based on the [Express](http://expressjs.com/) web framework and [Sequelize](https://sequelize.org/) ORM for accessing the database.
 
 https://github.com/magnus-leksell/zen-quote/
 
@@ -16,13 +16,11 @@ https://github.com/magnus-leksell/zen-quote/
 
     npm run devstart
 
-This starts the server on port 3000. Use a web browser and go to http://localhost:3000/ for the nice user interface.
+This starts the server on port 3000. Use a web browser and go to http://localhost:3000/ for the nice user interface; a user friendly interaction with the API using static html, vanilla javascript and css.
 
 ## Web user interface
 
 ![Zen Quote](./docs/images/zen-quote.png)
-
-A user friendly interaction with the API using static html, vanilla javascript and css.
 
 ### `/?id={id}`
 
@@ -51,6 +49,10 @@ Returns a random quote.
 ### `GET /api/quotes`
 
 Returns quotes matching query. Example `/api/quotes?q=zen` which returns quotes which quote text **or** author contains _zen_ (this is the search done from the user interface), `/api/quotes?author=watts` which returns quotes that have author containing _watts_, or `/api/quotes?q=zen&author=watts` which returns quotes that contains _zen_ **and** have author containing _watts_. One of, or both, query parameters `q` or `author`is required, and at least 3 characters each needed to be considered when quering the database.
+
+## Notes
+
+There are 893 quotes from about 214 different authors in the database.
 
 ## Author
 
