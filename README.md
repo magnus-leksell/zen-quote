@@ -16,11 +16,11 @@ https://github.com/magnus-leksell/zen-quote/
 
     npm run devstart
 
-This starts the server on port 3000. Use a web browser and go to http://localhost:3000/ for the nice user interface; a user friendly interaction with the API using static html, vanilla javascript and css.
+This starts the server on port 3000. Use a web browser and go to http://localhost:3000/ for the nice user interface; a user friendly interaction with the API using static HTML, vanilla JavaScript and CSS.
 
 ## Web user interface
 
-![Zen Quote](./docs/images/zen-quote.png)
+![Zen Quote](./docs/images/zen-quote.png | width=400)
 
 ### `/?id={id}`
 
