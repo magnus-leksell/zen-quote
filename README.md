@@ -2,7 +2,7 @@
 
 Zen Quote is a [Node.js](https://github.com/nodejs) RESTful API server and a single-page web application. It is based on the [Express](http://expressjs.com/) web framework and [Sequelize](https://sequelize.org/) ORM for database access.
 
-The database is a file-based SQLite3.
+The web application is one static HTML page, vanilla JavaScript and CSS. The database is a file-based SQLite3.
 
 https://github.com/magnus-leksell/zen-quote/
 
@@ -18,7 +18,7 @@ https://github.com/magnus-leksell/zen-quote/
 
     npm run devstart
 
-This starts the server on port 3000. Use a web browser and go to http://localhost:3000/ and enjoy a smooth interaction with the API using one static HTML page, vanilla JavaScript and CSS.
+This starts the server on port 3000. Use a web browser and go to http://localhost:3000/ and enjoy.
 
 ## Enjoy
 
