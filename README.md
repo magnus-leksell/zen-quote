@@ -2,7 +2,7 @@
 
 Zen Quote is a [Node.js](https://github.com/nodejs) RESTful API server and a single-page web application. It is based on the [Express](http://expressjs.com/) web framework and [Sequelize](https://sequelize.org/) ORM for database access.
 
-The web application is one static HTML page, vanilla JavaScript and CSS. The database is a file-based SQLite3.
+The web application is one static HTML page, vanilla JavaScript and SASS/CSS. The database is a file-based SQLite3.
 
 ## Get
 
