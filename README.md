@@ -33,11 +33,11 @@ Detailed documentation about the endpoints below.
 
 ## API endpoints
 
-Queries to the database is case insensitive.
+Note that queries to the database are made case insensitive.
 
 ### `GET /api/authors`
 
-Returns all authors or authors mathcing optional query, `?q=something`, at least 3 characters needed. Example `/api/authors?q=watts` which return authors containing _watts_.
+Returns all authors or authors matching optional query, `?q=something`, at least 3 characters needed. Example `/api/authors?q=watts` which return authors containing _watts_.
 
 ### `GET /api/quotes/{id}`
 
