@@ -51,6 +51,16 @@ Returns a random quote.
 
 Returns quotes matching query. Example `/api/quotes?q=zen` which returns quotes which quote text **or** author contains _zen_ (this is the search done from the user interface), `/api/quotes?author=watts` which returns quotes that have author containing _watts_, or `/api/quotes?q=zen&author=watts` which returns quotes that contains _zen_ **and** have author containing _watts_. One of, or both, query parameters `q` or `author`is required, and at least 3 characters each needed to be considered when quering the database.
 
+## The database
+
+It contains one table, quotes;
+
+Column | Type | Description
+-------|------|------------
+id | Integer | Primary key
+author | String | Name of author
+quote | Text | Quote text
+
 ## Notes
 
 There are 893 quotes from about 214 different authors in the database.
