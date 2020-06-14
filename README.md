@@ -4,8 +4,6 @@ Zen Quote is a [Node.js](https://github.com/nodejs) RESTful API server and a sin
 
 The web application is one static HTML page, vanilla JavaScript and CSS. The database is a file-based SQLite3.
 
-https://github.com/magnus-leksell/zen-quote/
-
 ## Get
 
     git clone https://github.com/magnus-leksell/zen-quote.git
@@ -18,7 +16,7 @@ https://github.com/magnus-leksell/zen-quote/
 
     npm run start
 
-This starts the server on port 3000. Use a web browser and go to http://localhost:3000/ and enjoy.
+This starts the server on port 3000. Use a web browser and go to http://localhost:3000/ and enjoy. Another way to start it is `npm run devstart`.
 
 ## Enjoy
 
@@ -27,11 +25,11 @@ This starts the server on port 3000. Use a web browser and go to http://localhos
 
 ### `/?id={id}`
 
-Shows a specific quote in the UI with the given id, example `/?id=42`.
+Shows a specific quote in the UI with the given id, example http://localhost:3000/?id=42.
 
 ### `/api-docs`
 
-Detailed documentation about the endpoints below.
+Detailed documentation about the endpoints below, http://localhost:3000/api-docs.
 
 ## API endpoints
 
