@@ -132,7 +132,7 @@ module.exports = (sequelize, Sequelize) => {
 };
 ```
 
-Please note that the `id` column is added automatically by Sequelize.
+Note that the `id` column is added automatically by Sequelize.
 
 ## The database
 
