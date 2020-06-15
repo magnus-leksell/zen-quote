@@ -68,7 +68,7 @@ Returns quotes matching query. Example `/api/quotes?q=zen` which returns quotes 
 
 ## Server application structure
 
-It is base on this pattern; Route -> Controller -> Service -> Database.
+It is following the pattern Route -> Controller -> Service -> Model
 
 ### Example route `GET /api/quotes/random`
 
