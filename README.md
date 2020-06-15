@@ -101,8 +101,6 @@ exports.findOneRandomly = async () => {
  }
 ```
 
-### Quote model
-
 #### models/quote.js
 
 ``` JavaScript
