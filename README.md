@@ -115,7 +115,7 @@ It is base on this pattern; Route -> Controller -> Service -> Database.
         return Quote;
     };
 
-Please note that the `id` column is added automatically by Sequalize.
+Please note that the `id` column is added automatically by Sequelize.
 
 ## The database
 
