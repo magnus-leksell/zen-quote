@@ -46,9 +46,9 @@ exports.findById = async (id) => {
 
 exports.findOneRandomly = async () => {
     return new Promise((resolve, reject) => {
-        Quote.findAll({ order: db.sequelize.random(), limit: 1 })
+        Quote.findOne({ order: db.sequelize.random(), limit: 1 })
             .then(data => {
-                resolve(data[0]);
+                resolve(data);
             })
             .catch(err => {
                 reject(err);
