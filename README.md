@@ -1,14 +1,14 @@
 # Zen Quote
 
-Zen Quote is a [Node.js](https://github.com/nodejs) RESTful API server and a single-page web application. It is based on the [Express](http://expressjs.com/) web framework and [Sequelize](https://sequelize.org/) ORM for database access.
+Zen Quote is a web application and a [Node.js](https://github.com/nodejs) RESTful API server, that displays quotes from different authors. It is based on the [Express](http://expressjs.com/) web framework and [Sequelize](https://sequelize.org/) ORM for database access. It features random quote, authors, quotes by author and searching.
 
-The web application is one static HTML page, vanilla JavaScript and SASS/CSS. The database is a file-based SQLite3.
+The web application uses single-page HTML, vanilla JavaScript and SASS/CSS. The database is a file-based SQLite3.
 
 ## Get
 
     git clone https://github.com/magnus-leksell/zen-quote.git
 
-## Build
+## Install
 
     npm install
 
@@ -18,7 +18,7 @@ The web application is one static HTML page, vanilla JavaScript and SASS/CSS. Th
 
 This starts the server on port 3000. Use a web browser and go to http://localhost:3000/ and enjoy. Another way to start it is `npm run devstart`.
 
-## Enjoy
+## Web application
 
 <a href="./docs/images/zen-quote.png" target="_blank"><img src="./docs/images/zen-quote.png" width="400"></a>
 <a href="./docs/images/authors.png" target="_blank"><img src="./docs/images/authors.png" width="400"></a>
@@ -29,7 +29,7 @@ Shows a specific quote in the UI with the given id, example http://localhost:300
 
 ### `/api-docs`
 
-Detailed documentation about the endpoints below, http://localhost:3000/api-docs.
+Detailed documentation about the API endpoints below, example http://localhost:3000/api-docs.
 
 ## API endpoints
 
