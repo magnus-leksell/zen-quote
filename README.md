@@ -38,10 +38,6 @@ This starts the server, default on port 3000. Use a web browser and go to http:/
 <a href="./docs/images/zen-quote.png" target="_blank"><img src="./docs/images/zen-quote.png" width="400"></a>
 <a href="./docs/images/authors.png" target="_blank"><img src="./docs/images/authors.png" width="400"></a>
 
-### `/?id={id}`
-
-Displays a specific quote in the UI with the given id, example http://localhost:3000/?id=42.
-
 ## API server endpoints
 
 All responses is of type `application/json` in `UTF-8` encoding. Note that queries to the database are made case insensitive. Detailed documentation about the API endpoints below can be found at `/api-docs`, example http://localhost:3000/api-docs.
