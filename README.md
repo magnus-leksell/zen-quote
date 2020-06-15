@@ -70,13 +70,13 @@ It is base on this pattern; Route -> Controller -> Service -> Database.
 app.use('/api', apiRouter);
 ```
 
-#### api.js
+#### routes/api.js
 
 ``` JavaScript
 router.get('/quotes/random', quoteController.getRandomQuote);
 ```
 
-#### quoteController.js
+#### controllers/quoteController.js
 
 ``` JavaScript
 exports.getRandomQuote = wrap(async (req, res, next) => {
@@ -85,7 +85,7 @@ exports.getRandomQuote = wrap(async (req, res, next) => {
 });
 ```
 
-#### quoteService.js
+#### services/quoteService.js
 
 ``` JavaScript
 exports.findOneRandomly = async () => {
@@ -101,9 +101,9 @@ exports.findOneRandomly = async () => {
  }
 ```
 
-### Model
+### Quote model
 
-#### Quote.js
+#### models/quote.js
 
 ``` JavaScript
 module.exports = (sequelize, Sequelize) => {
