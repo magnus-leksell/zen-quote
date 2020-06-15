@@ -60,7 +60,7 @@ Returns quotes matching query. Example `/api/quotes?q=zen` which returns quotes 
 
 ## The database
 
-`db/quotes.db` is a SQLite3 database file. It contains one table, quotes, in `UTF-8` encoding is defined as follows;
+`db/quotes.db` is a SQLite3 database file. It contains one table, quotes, in `UTF-8` encoding, defined as follows;
 
 Column | Type | Description
 -------|------|------------
@@ -68,11 +68,7 @@ id | Integer | Primary key
 author | String | Name of author
 quote | String | Quote text
 
-Actual type in the database file is `Text`, not `String`, because features of SQLite3.
-
-## Notes
-
-There are 893 quotes from about 214 different authors in the database.
+Actual type in the database file is `Text`, not `String`, because features of SQLite3. There are 893 quotes from about 214 different authors in the database.
 
 ## Author
 
