@@ -1,8 +1,23 @@
 # Zen Quote
 
-Zen Quote is a web application and a [Node.js](https://github.com/nodejs) RESTful API server, that displays quotes from different authors. It is based on the [Express](http://expressjs.com/) web framework and [Sequelize](https://sequelize.org/) ORM for database access. It features random quote, authors, quotes by author and searching.
+Zen Quote is a web application and a [Node.js](https://nodejs.org) RESTful API server, that displays quotes from different authors. It is based on the [Express](http://expressjs.com/) web framework and [Sequelize](https://sequelize.org/) ORM for database access.
 
-The web application uses single-page HTML, vanilla JavaScript and SASS/CSS. The database is a file-based SQLite3.
+## Features
+- Random quote
+- List authors
+- Quotes by author
+- Search quotes or authors
+
+## Live demonstration
+
+https://sajberspejs.com/zen
+
+## Technical
+- Smooth single-page web application
+- Vanilla JavaScript
+- SASS/CSS
+- RESTful API server
+- File-based [SQLite](https://sqlite.org/) database
 
 ## Get
 
@@ -16,7 +31,7 @@ The web application uses single-page HTML, vanilla JavaScript and SASS/CSS. The 
 
     npm run start
 
-This starts the server on port 3000. Use a web browser and go to http://localhost:3000/ and enjoy. Another way to start it is `npm run devstart`.
+This starts the server, default on port 3000. Use a web browser and go to http://localhost:3000/ and enjoy. Another way to start it is `npm run devstart`.
 
 ## Web application
 
@@ -25,15 +40,11 @@ This starts the server on port 3000. Use a web browser and go to http://localhos
 
 ### `/?id={id}`
 
-Shows a specific quote in the UI with the given id, example http://localhost:3000/?id=42.
+Displays a specific quote in the UI with the given id, example http://localhost:3000/?id=42.
 
-### `/api-docs`
+## API server endpoints
 
-Detailed documentation about the API endpoints below, example http://localhost:3000/api-docs.
-
-## API endpoints
-
-All responses is of type `application/json` in `UTF-8` encoding. Note that queries to the database are made case insensitive.
+All responses is of type `application/json` in `UTF-8` encoding. Note that queries to the database are made case insensitive. Detailed documentation about the API endpoints below can be found at `/api-docs`, example http://localhost:3000/api-docs.
 
 ### `GET /api/authors`
 
