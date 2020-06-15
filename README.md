@@ -1,12 +1,12 @@
 # Zen Quote
 
-Zen Quote is a web application and a [Node.js](https://nodejs.org) RESTful API server, that displays quotes from different authors. It is based on the [Express](http://expressjs.com/) web framework and [Sequelize](https://sequelize.org/) ORM for database access.
+Zen Quote is a web application and a [Node.js](https://nodejs.org) REST API server, that displays quotes from different authors. It is based on the [Express](http://expressjs.com/) web framework and [Sequelize](https://sequelize.org/) ORM for database access.
 
 ## Features
 - Random quote
 - List authors
 - Quotes by author
-- Search quotes or authors
+- Search quotes and authors
 
 ## Live demonstration
 
@@ -16,7 +16,7 @@ https://sajberspejs.com/zen
 - Smooth single-page web application
 - Vanilla JavaScript
 - SASS/CSS
-- RESTful API server
+- REST API server
 - File-based [SQLite](https://sqlite.org/) database
 
 ## Get
