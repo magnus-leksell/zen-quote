@@ -66,54 +66,65 @@ It is base on this pattern; Route -> Controller -> Service -> Database.
 
 #### app.js
 
-    app.use('/api', apiRouter);
+``` JavaScript
+app.use('/api', apiRouter);
+```
 
 #### api.js
 
-    router.get('/quotes/random', quoteController.getRandomQuote);
+``` JavaScript
+router.get('/quotes/random', quoteController.getRandomQuote);
+```
 
 #### quoteController.js
 
-    exports.getRandomQuote = wrap(async (req, res, next) => {
-        const quote = await quoteService.findOneRandomly();
-        res.send(quote);
-    });
+``` JavaScript
+exports.getRandomQuote = wrap(async (req, res, next) => {
+    const quote = await quoteService.findOneRandomly();
+    res.send(quote);
+});
+```
 
 #### quoteService.js
-    exports.findOneRandomly = async () => {
-        return new Promise((resolve, reject) => {
-            Quote.findOne({ order: db.sequelize.random(), limit: 1 })
-                .then(data => {
-                    resolve(data);
-                })
-                .catch(err => {
-                    reject(err);
-                });
-        });
-    }
+
+``` JavaScript
+exports.findOneRandomly = async () => {
+    return new Promise((resolve, reject) => {
+        Quote.findOne({ order: db.sequelize.random(), limit: 1 })
+              .then(data => {
+                  resolve(data);
+              })
+              .catch(err => {
+                  reject(err);
+              });
+      });
+ }
+```
 
 ### Model
 
 #### Quote.js
 
-    module.exports = (sequelize, Sequelize) => {
-        const Quote = sequelize.define('quote', {
-            // attributes
-            author: {
-                type: Sequelize.STRING,
-                allowNull: false
-            },
-            quote: {
-                type: Sequelize.TEXT,
-                allowNull: false
-            }
-        }, {
-            // options
-            timestamps: false
-        });
+``` JavaScript
+module.exports = (sequelize, Sequelize) => {
+    const Quote = sequelize.define('quote', {
+        // attributes
+        author: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        quote: {
+            type: Sequelize.TEXT,
+            allowNull: false
+        }
+    }, {
+        // options
+        timestamps: false
+    });
 
-        return Quote;
-    };
+    return Quote;
+};
+```
 
 Please note that the `id` column is added automatically by Sequelize.
 
