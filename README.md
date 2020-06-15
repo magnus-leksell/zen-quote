@@ -31,12 +31,20 @@ https://sajberspejs.com/zen
 
     npm run start
 
-This starts the server, default on port 3000. Use a web browser and go to http://localhost:3000/ and enjoy. Another way to start it is `npm run devstart`.
+This starts the server, default on port 3000. Use a web browser and go to http://localhost:3000/ and enjoy. Other way to start it is `npm run devstart`, which starts the server using `nodemon`, usefull in development mode.
 
 ## Web application
 
 <a href="./docs/images/zen-quote.png" target="_blank"><img src="./docs/images/zen-quote.png" width="400"></a>
 <a href="./docs/images/authors.png" target="_blank"><img src="./docs/images/authors.png" width="400"></a>
+
+## Build CSS from SASS
+
+If changes is made in any of the sass-files, build the css-file using the following command
+
+    npm run build-css
+
+which will construct and minimize `public/css/zen.css`.
 
 ## API server endpoints
 
@@ -90,7 +98,7 @@ exports.getRandomQuote = wrap(async (req, res, next) => {
 ``` JavaScript
 exports.findOneRandomly = async () => {
     return new Promise((resolve, reject) => {
-        Quote.findOne({ order: db.sequelize.random(), limit: 1 })
+        Quote.findOne({ order: db.sequelize.random() })
               .then(data => {
                   resolve(data);
               })
