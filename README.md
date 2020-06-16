@@ -20,15 +20,21 @@ https://sajberspejs.com/zen
 
 ## Get
 
-    git clone https://github.com/magnus-leksell/zen-quote.git
+```shell
+$ git clone https://github.com/magnus-leksell/zen-quote.git
+```
 
 ## Install
 
-    npm install
+```shell
+$ npm install
+```
 
 ## Start
 
-    npm run start
+```shell
+$ npm run start
+```
 
 This starts the server, default on port 3000. Use a web browser and go to http://localhost:3000/ and enjoy. Other way to start it is `npm run devstart`, which starts the server using `nodemon`, usefull in development mode.
 
@@ -43,7 +49,9 @@ The web application is made of one static HTML5 file, CSS3 styling and fast Java
 
 Changes made in any of the two sass-files requires building the css-file using the following command
 
-    npm run build-css
+```shell
+$ npm run build-css
+```
 
 which will construct and minimize `public/css/zen.css`.
 
@@ -75,19 +83,19 @@ It is following the pattern Route -> Controller -> Service -> Model
 
 #### app.js
 
-``` JavaScript
+```JavaScript
 app.use('/api', apiRouter);
 ```
 
 #### routes/api.js
 
-``` JavaScript
+```JavaScript
 router.get('/quotes/random', quoteController.getRandomQuote);
 ```
 
 #### controllers/quoteController.js
 
-``` JavaScript
+```JavaScript
 exports.getRandomQuote = wrap(async (req, res, next) => {
     const quote = await quoteService.findOneRandomly();
     res.send(quote);
@@ -96,7 +104,7 @@ exports.getRandomQuote = wrap(async (req, res, next) => {
 
 #### services/quoteService.js
 
-``` JavaScript
+```JavaScript
 exports.findOneRandomly = async () => {
     return new Promise((resolve, reject) => {
         Quote.findOne({ order: db.sequelize.random() })
@@ -112,7 +120,7 @@ exports.findOneRandomly = async () => {
 
 #### models/quote.js
 
-``` JavaScript
+```JavaScript
 module.exports = (sequelize, Sequelize) => {
     const Quote = sequelize.define('quote', {
         // attributes
