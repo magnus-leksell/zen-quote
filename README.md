@@ -20,19 +20,19 @@ https://sajberspejs.com/zen
 
 ## Get
 
-```shell
+```console
 $ git clone https://github.com/magnus-leksell/zen-quote.git
 ```
 
 ## Install
 
-```shell
+```console
 $ npm install
 ```
 
 ## Start
 
-```shell
+```console
 $ npm run start
 ```
 
@@ -49,7 +49,7 @@ The web application is made of one static HTML5 file, CSS3 styling and fast Java
 
 Changes made in any of the two sass-files requires building the css-file using the following command
 
-```shell
+```console
 $ npm run build-css
 ```
 
