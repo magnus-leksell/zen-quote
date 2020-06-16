@@ -8,14 +8,13 @@ Zen Quote is a web application and a [Node.js](https://nodejs.org) REST API serv
 - Quotes by author
 - Search quotes and authors
 
-## Live demonstration
+## Try it
 
 https://sajberspejs.com/zen
 
 ## Technical
-- Smooth single-page web application
+- Single-page web application
 - Vanilla JavaScript
-- SASS/CSS
 - REST API server
 - File-based [SQLite](https://sqlite.org/) database
 
@@ -38,9 +37,11 @@ This starts the server, default on port 3000. Use a web browser and go to http:/
 <a href="./docs/images/zen-quote.png" target="_blank"><img src="./docs/images/zen-quote.png" width="400"></a>
 <a href="./docs/images/authors.png" target="_blank"><img src="./docs/images/authors.png" width="400"></a>
 
-## Build CSS from SASS
+The web application is made of one static HTML5 file, CSS3 styling and fast JavaScript code that communicates with the backend API server with asynchronous calls, Ajax. This makes it a smooth user experience.
 
-If changes is made in any of the sass-files, build the css-file using the following command
+### Build CSS from SASS
+
+Changes made in any of the two sass-files requires building the css-file using the following command
 
     npm run build-css
 
@@ -48,7 +49,7 @@ which will construct and minimize `public/css/zen.css`.
 
 ## API server endpoints
 
-All responses is of type `application/json` in `UTF-8` encoding. Note that queries to the database are made case insensitive. Detailed documentation about the API endpoints below can be found at `/api-docs`, example http://localhost:3000/api-docs.
+All responses is of type JSON in UTF-8 encoding. Note that queries to the database are made case insensitive. Detailed documentation about the API endpoints below can be found at `/api-docs`, example http://localhost:3000/api-docs.
 
 ### `GET /api/authors`
 
