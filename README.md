@@ -142,7 +142,7 @@ Note that the `id` column is added automatically by Sequelize.
 Column | Type | Description
 -------|------|------------
 id | Integer | Primary key
-author | String | Name of author
+author | Text | Name of author
 quote | Text | Quote text
 
 There are 893 quotes from about 214 different authors in the database.
