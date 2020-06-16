@@ -1,6 +1,6 @@
 # Zen Quote
 
-Zen Quote is a web application and a [Node.js](https://nodejs.org) REST API server, that displays quotes from different authors. It is based on the [Express](http://expressjs.com/) web framework and [Sequelize](https://sequelize.org/) ORM for database access.
+Zen Quote is a web application and a [Node.js](https://nodejs.org) REST API server, that displays quotes from different authors. It is based on the [Express](http://expressjs.com/) web framework and [Sequelize](https://sequelize.org/) ORM for database access. Uses [Mocha](https://mochajs.org//) and [Chai](https://www.chaijs.com/) for tests.
 
 ## Features
 - Random quote
@@ -54,6 +54,14 @@ $ npm run build-css
 ```
 
 which will construct and minimize `public/css/zen.css`.
+
+## Test
+
+Run some tests with the following command
+
+```console
+$ npm run test
+```
 
 ## API server endpoints
 

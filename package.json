@@ -27,7 +27,7 @@
     "compression": "^1.7.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "helmet": "^3.23.0",
+    "helmet": "^3.23.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "sequelize": "^5.21.13",
