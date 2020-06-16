@@ -137,7 +137,7 @@ Note that the `id` column is added automatically by Sequelize.
 
 ## The database
 
-`db/quotes.db` is a SQLite3 database file. It contains one table, quotes, in `UTF-8` encoding, defined as follows;
+`db/quotes.db` is a SQLite3 database file. It contains one table, quotes, in UTF-8 encoding, defined as follows;
 
 Column | Type | Description
 -------|------|------------
