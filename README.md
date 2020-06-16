@@ -37,7 +37,7 @@ This starts the server, default on port 3000. Use a web browser and go to http:/
 <a href="./docs/images/zen-quote.png" target="_blank"><img src="./docs/images/zen-quote.png" width="400"></a>
 <a href="./docs/images/authors.png" target="_blank"><img src="./docs/images/authors.png" width="400"></a>
 
-The web application is made of one static HTML5 file, CSS3 styling and fast JavaScript code that communicates with the backend API server with asynchronous calls, Ajax. This makes it a smooth user experience.
+The web application is made of one static HTML5 file, CSS3 styling and fast JavaScript code that communicates with the backend API server with asynchronous calls, Ajax. This makes it a smooth user experience. Using nice free icons from [Font Awesome](https://fontawesome.com/).
 
 ### Build CSS from SASS
 
