@@ -5,7 +5,8 @@
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
     "serverstart": "DEBUG=zen-quote:* npm run devstart",
-    "build-css": "node-sass --include-path sass ./sass/index.sass ./public/css/zen.css --output-style compressed"
+    "build-css": "node-sass --include-path sass ./sass/index.sass ./public/css/zen.css --output-style compressed",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -29,12 +30,14 @@
     "helmet": "^3.23.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "node-sass": "^4.14.1",
     "sequelize": "^5.21.13",
     "sqlite3": "^4.2.0",
     "swagger-ui-express": "^4.1.4"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "node-sass": "^4.14.1",
     "nodemon": "^2.0.4"
   }
 }
