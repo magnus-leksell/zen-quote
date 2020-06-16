@@ -55,11 +55,8 @@ function toggleMenu() {
 function showMessage(message, title = 'Error') {
   let m = message ? (message.message || message) : 'Error';
   const div = document.createElement('div');
-  let p = document.createElement('p');
 
-  p.appendChild(document.createTextNode(m));
-
-  div.appendChild(p);
+  div.innerHTML = '<p>' + message + '</p>';
 
   showCenteredItem(title, div);
 }
@@ -231,28 +228,10 @@ function showQuotesByAuthor(author) {
 function showAbout() {
   const div = document.createElement('div');
 
-  let p = document.createElement('p');
-  p.innerHTML = 'Zen Quote &copy; Magnus Leksell';
-
-  div.appendChild(p);
-
-  const i = document.createElement('i');
-  i.className = 'fas fa-external-link-alt icon-color margin--right';
-
-  p = document.createElement('p');
-  p.appendChild(i);
-
-  const a = document.createElement('a');
-  const h = 'https://github.com/magnus-leksell';
-
-  a.href = h + '/';
-  a.target = '_blank';
-  a.innerText = h;
-
-
-  p.appendChild(a);
-
-  div.appendChild(p);
+  div.innerHTML = '<p>Zen Quote &copy; 2020 Magnus Leksell</p>'
+    + '<p><i class="fas fa-external-link-alt icon-color margin--right"></i>'
+    + '<a target="_blank" href="https://github.com/magnus-leksell/">'
+    + 'https://github.com/magnus-leksell</a></p>';
 
   showCenteredItem('About', div);
 }
