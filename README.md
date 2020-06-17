@@ -55,6 +55,16 @@ $ npm run build-css
 
 which will construct and minimize `public/css/zen.css`.
 
+### Build static files for production
+
+Build static files for later deployment in production with the following command
+
+```console
+$ npm run build
+```
+
+which will construct, minimize and place files in the directory `build/static`.
+
 ## Test
 
 Run some tests with the following command
