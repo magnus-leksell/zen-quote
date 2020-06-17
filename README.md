@@ -47,7 +47,7 @@ The web application is made of one static HTML5 file, CSS3 styling and fast Java
 
 ### Building
 
-Building is based on [Grunt](https://gruntjs.com), the JavaScript Task Runner, [node-sass](https://www.npmjs.com/package/node-sass) library and [terser](https://www.npmjs.com/package/terser), the JavaScript parser and mangler/compressor toolkit for ES6+.
+Building is based on [Grunt](https://gruntjs.com) the JavaScript Task Runner, [node-sass](https://www.npmjs.com/package/node-sass) library, and [terser](https://www.npmjs.com/package/terser) the JavaScript parser and mangler/compressor toolkit for ES6+.
 
 #### CSS from SASS
 
@@ -57,7 +57,7 @@ Changes made in any of the two sass-files requires building the css-file using t
 $ npm run build-css
 ```
 
-which will construct and minimize `public/css/zen.css`. Depends on the [node-sass](https://www.npmjs.com/package/node-sass) library.
+which will construct and minimize `public/css/zen.css`.
 
 #### Build static files for production
 
