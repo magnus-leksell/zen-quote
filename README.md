@@ -75,7 +75,7 @@ $ npm run test
 
 ## API server endpoints
 
-All responses is of type JSON in UTF-8 encoding. Note that queries to the database are made case insensitive. Detailed documentation about the API endpoints below can be found at `/api-docs`, example http://localhost:3000/api-docs.
+All responses is of type JSON in UTF-8 encoding. Note that queries to the database are made case insensitive. Detailed documentation about the API endpoints below can be found at `/api-docs`, which depends on [Swagger UI Express](https://www.npmjs.com/package/swagger-ui-express), example http://localhost:3000/api-docs.
 
 ### `GET /api/authors`
 
