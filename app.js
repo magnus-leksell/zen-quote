@@ -17,13 +17,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(compression());
 app.use(helmet());
-app.use('/', express.static(path.join(__dirname, 'public')));
 
+// routes
+app.use('/', express.static(path.join(__dirname, 'public')));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openApiDocumentation));
 app.use('/api', apiRouter);
-app.use('/api/*', (req, res, next) => {
-    next(createError(404));
-});
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

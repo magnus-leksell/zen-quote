@@ -52,8 +52,7 @@ function toggleMenu() {
   link.classList.toggle('bg');
 }
 
-function showMessage(message, title = 'Error') {
-  let m = message ? (message.message || message) : 'Error';
+function showMessage(message, title) {
   const div = document.createElement('div');
 
   div.innerHTML = '<p>' + message + '</p>';
