@@ -6,11 +6,10 @@
     "devstart": "nodemon ./bin/www",
     "serverstart": "DEBUG=zen-quote:* npm run devstart",
     "build-css": "node-sass --include-path sass ./sass/index.sass ./public/css/zen.css --output-style compressed",
-    "build-static-html": "cp -a ./public/index.html build/static/",
-    "build-static-css": "node-sass --include-path sass ./sass/index.sass ./build/static/css/zen.css --output-style compressed",
-    "build-static-js": "terser ./public/scripts/zen.js -o ./build/static/scripts/zen.js -c -m",
-    "build-static": "npm run build-static-html & npm run build-static-js & npm run build-static-css",
-    "build": "mkdir -p build/static/{css,scripts} && npm run build-static",
+    "build-static-html": "mkdir -p build/static && cp -a ./public/index.html build/static/",
+    "build-static-css": "mkdir -p build/static/css && node-sass --include-path sass ./sass/index.sass ./build/static/css/zen.css --output-style compressed",
+    "build-static-js": "mkdir -p build/static/scripts && terser ./public/scripts/zen.js -o ./build/static/scripts/zen.js -c -m",
+    "build": "npm run build-static-html & npm run build-static-js & npm run build-static-css",
     "test": "mocha"
   },
   "repository": {
