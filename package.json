@@ -5,8 +5,8 @@
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
     "serverstart": "DEBUG=zen-quote:* npm run devstart",
-    "build-css": "node-sass --include-path sass ./sass/index.sass ./public/css/zen.css --output-style compressed",
-    "build": "./bin/build",
+    "build-css": "grunt build-css",
+    "build": "grunt",
     "test": "mocha"
   },
   "repository": {
@@ -38,6 +38,10 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "grunt": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-sass": "^3.1.0",
+    "grunt-terser": "^1.0.0",
     "mocha": "^8.0.1",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",

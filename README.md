@@ -45,7 +45,11 @@ This starts the server, default on port 3000. Use a web browser and go to http:/
 
 The web application is made of one static HTML5 file, CSS3 styling and fast JavaScript code that communicates with the backend API server with asynchronous calls, Ajax. This makes it a smooth user experience. Using nice free icons from [Font Awesome](https://fontawesome.com/).
 
-### Build CSS from SASS
+### Building
+
+Building is based on [Grunt](https://gruntjs.com), the JavaScript Task Runner, [node-sass](https://www.npmjs.com/package/node-sass) library and [terser](https://www.npmjs.com/package/terser), the JavaScript parser and mangler/compressor toolkit for ES6+.
+
+#### CSS from SASS
 
 Changes made in any of the two sass-files requires building the css-file using the following command
 
@@ -55,7 +59,7 @@ $ npm run build-css
 
 which will construct and minimize `public/css/zen.css`. Depends on the [node-sass](https://www.npmjs.com/package/node-sass) library.
 
-### Build static files for production
+#### Build static files for production
 
 Build static files for later deployment in production with the following command
 
@@ -63,7 +67,7 @@ Build static files for later deployment in production with the following command
 $ npm run build
 ```
 
-which will construct, minimize and place files in the directory `build/static`. Depends on the [node-sass](https://www.npmjs.com/package/node-sass) library and [terser](https://www.npmjs.com/package/terser), the JavaScript parser and mangler/compressor toolkit for ES6+.
+which will construct, minimize and place files in the directory `build/static`.
 
 ## Test
 
