@@ -155,7 +155,7 @@ function populateData(data, callback, title) {
   }
 }
 
-function createRequest(callback, title, message) {
+function callAPI(path, callback, title, message) {
   const xhr = new XMLHttpRequest();
 
   xhr.onreadystatechange = () => {
@@ -173,7 +173,8 @@ function createRequest(callback, title, message) {
     }
   };
 
-  return xhr;
+  xhr.open('GET', API_PATH + path);
+  xhr.send();
 }
 
 function searchQuotes(form) {
@@ -186,11 +187,9 @@ function searchQuotes(form) {
     return;
   }
 
-  const xhr = createRequest(createQuote, 'Search quotes', 'Could not find quotes');
-  const params = (query ? '?q=' + query : '');
+  const path = '/quotes' + (query ? '?q=' + query : '');
 
-  xhr.open('GET', API_PATH + '/quotes' + params);
-  xhr.send();
+  callAPI(path, createQuote, 'Search quotes', 'Could not find quotes');
 }
 
 function getQuoteId() {
@@ -198,11 +197,9 @@ function getQuoteId() {
 }
 
 function showQuote(id) {
-  const xhr = createRequest(createSingleQuote, 'Zen Quote', 'Could not find quote');
-  const _id = id || getQuoteId() || 'random';
+  const path = '/quotes/' + (id || getQuoteId() || 'random');
 
-  xhr.open('GET', API_PATH + '/quotes/' + _id);
-  xhr.send();
+  callAPI(path, createSingleQuote, 'Zen Quote', 'Could not find quote');
 }
 
 function showRandomQuote() {
@@ -210,18 +207,13 @@ function showRandomQuote() {
 }
 
 function showAuthors() {
-  const xhr = createRequest(createAuthor, 'Authors', 'Could not find authors');
-
-  xhr.open('GET', API_PATH + '/authors');
-  xhr.send();
+  callAPI('/authors', createAuthor, 'Authors', 'Could not find authors');
 }
 
 function showQuotesByAuthor(author) {
-  const xhr = createRequest(createQuote, 'Quotes by author', 'Could not find quotes');
-  const params = author ? ('?author=' + author) : '';
+  const path = '/quotes' + (author ? ('?author=' + author) : '');
 
-  xhr.open('GET', API_PATH + '/quotes' + params);
-  xhr.send();
+  callAPI(path, createQuote, 'Quotes by author', 'Could not find quotes');
 }
 
 function showAbout() {
