@@ -53,7 +53,7 @@ Changes made in any of the two sass-files requires building the css-file using t
 $ npm run build-css
 ```
 
-which will construct and minimize `public/css/zen.css`.
+which will construct and minimize `public/css/zen.css`. Depends on the [node-sass](https://www.npmjs.com/package/node-sass) library.
 
 ### Build static files for production
 
@@ -63,7 +63,7 @@ Build static files for later deployment in production with the following command
 $ npm run build
 ```
 
-which will construct, minimize and place files in the directory `build/static`.
+which will construct, minimize and place files in the directory `build/static`. Depends on the [node-sass](https://www.npmjs.com/package/node-sass) library and [terser](https://www.npmjs.com/package/terser), the JavaScript parser and mangler/compressor toolkit for ES6+.
 
 ## Test
 
