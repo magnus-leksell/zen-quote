@@ -36,7 +36,7 @@ $ npm install
 $ npm run start
 ```
 
-This starts the server, default on port 3000. Use a web browser and go to http://localhost:3000/ and enjoy. Other way to start it is `npm run devstart`, which starts the server using `nodemon`, usefull in development mode.
+This starts the server, default on port 3000. Use a web browser and go to <http://localhost:3000/> and enjoy. Other way to start it is `npm run devstart`, which starts the server using `nodemon`, usefull in development mode.
 
 ## Web application
 
@@ -49,9 +49,13 @@ The web application is made of one static HTML5 file, CSS3 styling and fast Java
 
 Building is based on [Grunt](https://gruntjs.com) the JavaScript Task Runner, [node-sass](https://www.npmjs.com/package/node-sass) library, and [terser](https://www.npmjs.com/package/terser) the JavaScript parser and mangler/compressor toolkit for ES6+.
 
+#### Note
+
+There is no need to build anything to get it up and running. It *should* just work after install.
+
 #### CSS from SASS
 
-Changes made in any of the two sass-files requires building the css-file using the following command
+Changes made in any of the files in the `sass` folder requires constructing the css-file using the following command
 
 ```console
 $ npm run build-css
@@ -67,7 +71,7 @@ Build static files for later deployment in production with the following command
 $ npm run build
 ```
 
-which will construct, minimize and place files in the directory `build/static`.
+which will construct, minimize and place files in the `build/static` folder.
 
 ## Test
 
@@ -79,7 +83,7 @@ $ npm run test
 
 ## API server endpoints
 
-All responses is of type JSON in UTF-8 encoding. Note that queries to the database are made case insensitive. Detailed documentation about the API endpoints below can be found at `/api-docs`, which depends on [Swagger UI Express](https://www.npmjs.com/package/swagger-ui-express), example http://localhost:3000/api-docs.
+All responses is of type JSON in UTF-8 encoding. Note that queries to the database are made case insensitive. Detailed documentation about the API endpoints below can be found at `/api-docs`, which depends on [Swagger UI Express](https://www.npmjs.com/package/swagger-ui-express), example <http://localhost:3000/api-docs>.
 
 ### `GET /api/authors`
 
@@ -179,7 +183,7 @@ There are 893 quotes from about 214 different authors in the database.
 
 ## Author
 
-**Magnus Leksell** - https://github.com/magnus-leksell
+**Magnus Leksell** - <https://sajberspejs.com>
 
 ## License
 

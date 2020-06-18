@@ -1,5 +1,3 @@
-const API_PATH = 'api';
-
 function emptyContainer(title, isCenterAligned) {
   const c = document.getElementById('container');
 
@@ -155,7 +153,8 @@ function populateData(data, callback, title) {
   }
 }
 
-function callAPI(path, callback, title, message) {
+function callAPI(path, callback, title, errorMessage) {
+  const API_URL = 'api' + path;
   const xhr = new XMLHttpRequest();
 
   xhr.onreadystatechange = () => {
@@ -168,12 +167,12 @@ function callAPI(path, callback, title, message) {
           showMessage('Nothing found', title);
         }
       } else {
-        showMessage(message, title);
+        showMessage(errorMessage, title);
       }
     }
   };
 
-  xhr.open('GET', API_PATH + path);
+  xhr.open('GET', API_URL);
   xhr.send();
 }
 
@@ -188,7 +187,6 @@ function searchQuotes(form) {
   }
 
   const path = '/quotes' + (query ? '?q=' + query : '');
-
   callAPI(path, createQuote, 'Search quotes', 'Could not find quotes');
 }
 
@@ -198,7 +196,6 @@ function getQuoteId() {
 
 function showQuote(id) {
   const path = '/quotes/' + (id || getQuoteId() || 'random');
-
   callAPI(path, createSingleQuote, 'Zen Quote', 'Could not find quote');
 }
 
@@ -212,17 +209,13 @@ function showAuthors() {
 
 function showQuotesByAuthor(author) {
   const path = '/quotes' + (author ? ('?author=' + author) : '');
-
   callAPI(path, createQuote, 'Quotes by author', 'Could not find quotes');
 }
 
 function showAbout() {
   const div = document.createElement('div');
 
-  div.innerHTML = '<p>Zen Quote &copy; 2020 Magnus Leksell</p>'
-    + '<p><i class="fas fa-external-link-alt icon-color margin--right"></i>'
-    + '<a target="_blank" href="https://github.com/magnus-leksell/">'
-    + 'https://github.com/magnus-leksell</a></p>';
+  div.innerHTML = '<p>&copy; 2020 Magnus Leksell</p><p><a href="https://sajberspejs.com/">https://sajberspejs.com</a></p>';
 
   showCenteredItem('About', div);
 }
