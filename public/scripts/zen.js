@@ -222,4 +222,4 @@ function showAbout() {
   showCenteredItem('About', div);
 }
 
-window.addEventListener('DOMContentLoaded', () => showQuote());
+window.addEventListener('DOMContentLoaded', showQuote());
