@@ -138,6 +138,7 @@ function createSingleQuote(item) {
 
 function populateData(data, callback, title) {
   if (!data || (Array.isArray(data) && data.length === 0)) {
+    console.log('Nothing!');
     showMessage('Nothing found', title);
     return;
   }
@@ -153,27 +154,28 @@ function populateData(data, callback, title) {
   }
 }
 
+function status(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return Promise.resolve(response)
+  } else {
+    return Promise.reject(new Error(response.statusText))
+  }
+}
+
+function json(response) {
+  return response.json()
+}
+
 function callAPI(path, callback, title, errorMessage) {
   const API_URL = 'api' + path;
-  const xhr = new XMLHttpRequest();
 
-  xhr.onreadystatechange = () => {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      const status = xhr.status;
-      if (status === 0 || (status >= 200 && status < 400)) {
-        if (xhr.responseText) {
-          populateData(JSON.parse(xhr.responseText), callback, title);
-        } else {
-          showMessage('Nothing found', title);
-        }
-      } else {
-        showMessage(errorMessage, title);
-      }
-    }
-  };
-
-  xhr.open('GET', API_URL);
-  xhr.send();
+  fetch(API_URL)
+    .then(status)
+    .then(json)
+    .then(data => populateData(data, callback, title))
+    .catch(error => {
+      showMessage(errorMessage, title);
+    });
 }
 
 function searchQuotes(form) {
@@ -194,7 +196,7 @@ function getQuoteId() {
   return typeof URLSearchParams !== 'undefined' ? new URLSearchParams(window.location.search).get('id') : null;
 }
 
-function showQuote(id) {
+function showQuote(id = null) {
   const path = '/quotes/' + (id || getQuoteId() || 'random');
   callAPI(path, createSingleQuote, 'Zen Quote', 'Could not find quote');
 }
@@ -207,7 +209,7 @@ function showAuthors() {
   callAPI('/authors', createAuthor, 'Authors', 'Could not find authors');
 }
 
-function showQuotesByAuthor(author) {
+function showQuotesByAuthor(author = null) {
   const path = '/quotes' + (author ? ('?author=' + author) : '');
   callAPI(path, createQuote, 'Quotes by author', 'Could not find quotes');
 }
@@ -220,4 +222,4 @@ function showAbout() {
   showCenteredItem('About', div);
 }
 
-window.addEventListener('DOMContentLoaded', showRandomQuote);
+window.addEventListener('DOMContentLoaded', () => showQuote());
