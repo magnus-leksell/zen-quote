@@ -21,12 +21,12 @@ function emptyContainer(title, isCenterAligned) {
 }
 
 function createCenteredItem(item) {
-  const transbox = document.createElement('div');
+  const div = document.createElement('div');
 
-  transbox.className = 'rounded transbox transbox-bg';
-  transbox.appendChild(item);
+  div.className = 'rounded transbox transbox-bg';
+  div.appendChild(item);
 
-  return transbox;
+  return div;
 }
 
 function showCenteredItem(title, item) {
@@ -64,7 +64,7 @@ function createAuthorLink(author, noTitle = false) {
   a.href = 'javascript:void(0)';
   a.title = noTitle ? '' : 'Quotes by author';
   a.innerText = author;
-  a.addEventListener('click', function () { showQuotesByAuthor(author); });
+  a.addEventListener('click', () => showQuotesByAuthor(author));
 
   return a;
 }
@@ -86,7 +86,7 @@ function createSingleQuoteToolbar() {
   let a = document.createElement('a');
   a.href = 'javascript:void(0)';
   a.title = 'Random quote';
-  a.addEventListener('click', function () { showRandomQuote(); });
+  a.addEventListener('click', showRandomQuote);
 
   let i = document.createElement('i');
   i.className = 'fas fa-random fa-fw';
@@ -116,7 +116,7 @@ function createQuote(item) {
   const quote = document.createElement('div');
 
   quote.className = 'rounded item';
-  quote.addEventListener('click', function () { void (0); }); // fix for mobile devices
+  quote.addEventListener('click', () => void (0)); // fix for mobile devices
   quote.appendChild(createQuoteItem(quote, item));
 
   return quote;
@@ -146,8 +146,7 @@ function populateData(data, callback, title) {
     const container = emptyContainer(title);
     data.forEach((item) => container.appendChild(callback(item)));
   } else {
-    const container = emptyContainer(title, true);
-    container.appendChild(callback(data));
+    emptyContainer(title, true).appendChild(callback(data));
   }
 }
 
@@ -207,4 +206,4 @@ function showAbout() {
   showCenteredItem('About', div);
 }
 
-window.addEventListener('DOMContentLoaded', showQuote());
+window.addEventListener('DOMContentLoaded', () => showQuote());
