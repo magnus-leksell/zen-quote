@@ -138,42 +138,32 @@ function createSingleQuote(item) {
 
 function populateData(data, callback, title) {
   if (!data || (Array.isArray(data) && data.length === 0)) {
-    console.log('Nothing!');
     showMessage('Nothing found', title);
     return;
   }
 
   if (Array.isArray(data)) {
     const container = emptyContainer(title);
-    data.forEach(function (item, index) {
-      container.appendChild(callback(item));
-    });
+    data.forEach((item) => container.appendChild(callback(item)));
   } else {
     const container = emptyContainer(title, true);
     container.appendChild(callback(data));
   }
 }
 
-function status(response) {
-  if (response.status >= 200 && response.status < 300) {
-    return Promise.resolve(response)
-  } else {
-    return Promise.reject(new Error(response.statusText))
-  }
-}
-
-function json(response) {
-  return response.json()
-}
-
 function callAPI(path, callback, title, errorMessage) {
   const API_URL = 'api' + path;
 
   fetch(API_URL)
-    .then(status)
-    .then(json)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json();
+    })
     .then(data => populateData(data, callback, title))
     .catch(error => {
+      console.error(error);
       showMessage(errorMessage, title);
     });
 }
@@ -216,9 +206,7 @@ function showQuotesByAuthor(author = null) {
 
 function showAbout() {
   const div = document.createElement('div');
-
   div.innerHTML = '<p>&copy; 2020 Magnus Leksell</p><p><a href="https://sajberspejs.com/">https://sajberspejs.com</a></p>';
-
   showCenteredItem('About', div);
 }
 
