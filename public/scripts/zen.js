@@ -162,7 +162,7 @@ function callAPI(path, callback, title, errorMessage) {
       return response.json();
     })
     .then(data => populateData(data, callback, title))
-    .catch(error => showMessage(errorMessage, title));
+    .catch(() => showMessage(errorMessage, title));
 }
 
 function searchQuotes(form) {
