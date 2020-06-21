@@ -41,8 +41,8 @@ body
   width: 100%
 
 .rounded
-  -moz-border-radius: 8px
   -webkit-border-radius: 8px
+  -moz-border-radius: 8px
   border-radius: 8px
 
 .item
@@ -146,11 +146,12 @@ a
 
 #toggle-link
   &.bg
-    background-color: none
+    background-color: transparent
 
 #rotate
   -webkit-transition: transform 200ms linear
   -moz-transition: transform 200ms linear
+  -o-transition: transform 200ms linear
   transition: transform 200ms linear
 
   &.up
@@ -256,9 +257,6 @@ a
 
 @media only screen and (min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) 
   .topnav
-    flex-wrap: wrap
-    align-items: left
-
     .title
       display: none
 
