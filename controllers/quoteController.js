@@ -44,4 +44,3 @@ exports.searchQuotes = wrap(async (req, res, next) => {
 
     res.send(quotes);
 });
-

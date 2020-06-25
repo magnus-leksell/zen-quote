@@ -33,7 +33,7 @@ $ npm install
 ## Start
 
 ```console
-$ npm run start
+$ npm start
 ```
 
 This starts the server, default on port 3000. Use a web browser and go to <http://localhost:3000/> and enjoy. Other way to start it is `npm run devstart`, which starts the server using `nodemon`, usefull in development mode.
@@ -78,7 +78,7 @@ which will construct, minimize and place files in the `build/static` folder.
 Run some tests depending on [Mocha](https://mochajs.org//) and [Chai](https://www.chaijs.com/), with the following command
 
 ```console
-$ npm run test
+$ npm test
 ```
 
 ## API server endpoints
@@ -134,14 +134,10 @@ exports.getRandomQuote = wrap(async (req, res, next) => {
 exports.findOneRandomly = async () => {
     return new Promise((resolve, reject) => {
         Quote.findOne({ order: db.sequelize.random() })
-              .then(data => {
-                  resolve(data);
-              })
-              .catch(err => {
-                  reject(err);
-              });
-      });
- }
+            .then(data => resolve(data))
+            .catch(err => reject(err));
+    });
+}
 ```
 
 #### models/quote.js
