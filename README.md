@@ -10,7 +10,7 @@ Zen Quote is a web application and a [Node.js](https://nodejs.org) REST API serv
 
 ## Try it
 
-https://sajberspejs.com/zen
+https://leksell.io/zen
 
 ## Technical
 - Single-page web application
@@ -179,7 +179,7 @@ There are 893 quotes from about 214 different authors in the database.
 
 ## Author
 
-**Magnus Leksell** - <https://sajberspejs.com>
+**Magnus Leksell** - <https://leksell.io>
 
 ## License
 

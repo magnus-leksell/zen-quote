@@ -202,7 +202,7 @@ function showQuotesByAuthor(author = null) {
 
 function showAbout() {
   const div = document.createElement('div');
-  div.innerHTML = '<p>&copy; 2020 Magnus Leksell</p><p><a href="https://sajberspejs.com/">https://sajberspejs.com</a></p>';
+  div.innerHTML = '<p>&copy; 2020 Magnus Leksell</p><p><a href="https://leksell.io/">https://leksell.io</a></p>';
   showCenteredItem('About', div);
 }
 
