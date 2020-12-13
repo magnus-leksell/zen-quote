@@ -1,22 +1,19 @@
-let createError = require('http-errors');
-let express = require('express');
-let path = require('path');
-let logger = require('morgan');
-let compression = require('compression');
-let helmet = require('helmet');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const compression = require('compression');
 
 const swaggerUi = require('swagger-ui-express');
 const openApiDocumentation = require('./docs/openapi');
 
-let apiRouter = require('./routes/api');
-
-let app = express();
+const apiRouter = require('./routes/api');
+const app = express();
 
 app.use(logger('[:date[clf]] :method :url :status :res[content-length] - :response-time ms'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(compression());
-app.use(helmet());
 
 // routes
 app.use('/', express.static(path.join(__dirname, 'public')));

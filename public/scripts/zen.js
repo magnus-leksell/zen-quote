@@ -48,6 +48,8 @@ function toggleMenu() {
   }
 
   link.classList.toggle('bg');
+
+  return false;
 }
 
 function showMessage(message, title) {
@@ -61,7 +63,7 @@ function showMessage(message, title) {
 function createAuthorLink(author, noTitle = false) {
   const a = document.createElement('a');
 
-  a.href = 'javascript:void(0)';
+  a.href = '#';
   a.title = noTitle ? '' : 'Quotes by author';
   a.innerText = author;
   a.addEventListener('click', () => showQuotesByAuthor(author));
@@ -84,7 +86,7 @@ function createSingleQuoteToolbar() {
   s.className = 'toolbar';
 
   let a = document.createElement('a');
-  a.href = 'javascript:void(0)';
+  a.href = '#';
   a.title = 'Random quote';
   a.addEventListener('click', showRandomQuote);
 
@@ -151,7 +153,7 @@ function populateData(data, callback, title) {
 }
 
 function callAPI(path, callback, title, errorMessage) {
-  const API_URL = 'api' + path;
+  const API_URL = 'api/' + path;
 
   fetch(API_URL)
     .then(response => {
@@ -174,7 +176,7 @@ function searchQuotes(form) {
     return;
   }
 
-  const path = '/quotes' + (query ? '?q=' + query : '');
+  const path = 'quotes' + (query ? '?q=' + query : '');
   callAPI(path, createQuote, 'Search quotes', 'Could not find quotes');
 }
 
@@ -183,27 +185,48 @@ function getQuoteId() {
 }
 
 function showQuote(id = null) {
-  const path = '/quotes/' + (id || getQuoteId() || 'random');
+  const path = 'quotes/' + (id || getQuoteId() || 'random');
   callAPI(path, createSingleQuote, 'Zen Quote', 'Could not find quote');
 }
 
 function showRandomQuote() {
   showQuote('random');
+  return false;
 }
 
 function showAuthors() {
-  callAPI('/authors', createAuthor, 'Authors', 'Could not find authors');
+  callAPI('authors', createAuthor, 'Authors', 'Could not find authors');
+  return false;
 }
 
 function showQuotesByAuthor(author = null) {
-  const path = '/quotes' + (author ? ('?author=' + author) : '');
+  const path = 'quotes' + (author ? ('?author=' + author) : '');
   callAPI(path, createQuote, 'Quotes by author', 'Could not find quotes');
+  return false;
 }
 
 function showAbout() {
   const div = document.createElement('div');
   div.innerHTML = '<p>&copy; 2020 Magnus Leksell</p><p><a href="https://leksell.io/">https://leksell.io</a></p>';
   showCenteredItem('About', div);
+  return false;
 }
 
-window.addEventListener('DOMContentLoaded', () => showQuote());
+// When DOM loaded show a quote and add some event listeners
+window.addEventListener('DOMContentLoaded', () => {
+    showQuote();
+
+    document.getElementById('toggle-link').addEventListener('click', toggleMenu);
+    document.getElementById('quote-link').addEventListener('click', showRandomQuote);
+    document.getElementById('authors-link').addEventListener('click', showAuthors);
+    document.getElementById('about-link').addEventListener('click', showAbout);
+
+    document.forms["search"].addEventListener('submit', function (e) {
+        e.preventDefault();
+        searchQuotes(this);
+    });
+
+    document.getElementById('q').addEventListener('click', function () {
+        this.select();
+    });
+});

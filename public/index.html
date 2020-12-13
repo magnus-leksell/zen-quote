@@ -6,23 +6,24 @@
 <meta name="keywords" content="zen, wisdom, buddhism, stoic, stoicism, quote">
 <meta name="author" content="Magnus Leksell">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="script-src 'self';">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 <link rel="stylesheet" type="text/css" href="css/zen.css">
-<script src="scripts/zen.js"></script>
+<script defer src="scripts/zen.js"></script>
 
 <body>
     <div id="menubutton">
-        <a id="toggle-link" href="javascript:void(0)" onclick="toggleMenu()" title="Show menu">
+        <a href="#" id="toggle-link" title="Show menu">
             <i id="rotate" class="fas fa-chevron-down fa-fw"></i>
         </a>
     </div>
     <div id="topnav" class="topnav topnav-bg">
         <div class="toolbar">
-            <a href="javascript:void(0)" onclick="showRandomQuote()" title="Random quote">
+            <a href="#" id="quote-link" title="Random quote">
                 <i class="fas fa-random fa-fw"></i>
-            </a><a href="javascript:void(0)" onclick="showAuthors()" title="List authors">
+            </a><a href="#" id="authors-link" title="List authors">
                 <i class="fas fa-list-ul fa-fw"></i>
-            </a><a href="javascript:void(0)" onclick="showAbout()" title="About">
+            </a><a href="#" id="about-link" title="About">
                 <i class="fas fa-info"></i>
             </a>
         </div>
@@ -30,8 +31,8 @@
             <span id="title">Zen Quote</span>
         </div>
         <div class="search-container">
-            <form onsubmit="searchQuotes(this); return false;">
-                <input type="text" onclick="this.select();" placeholder="Search" name="q" value="">
+            <form id="search">
+                <input type="text" placeholder="Search" id="q" name="q" value="">
             </form>
         </div>
     </div>
