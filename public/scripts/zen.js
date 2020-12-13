@@ -48,8 +48,6 @@ function toggleMenu() {
   }
 
   link.classList.toggle('bg');
-
-  return false;
 }
 
 function showMessage(message, title) {
@@ -66,7 +64,10 @@ function createAuthorLink(author, noTitle = false) {
   a.href = '#';
   a.title = noTitle ? '' : 'Quotes by author';
   a.innerText = author;
-  a.addEventListener('click', () => showQuotesByAuthor(author));
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    showQuotesByAuthor(author);
+  });
 
   return a;
 }
@@ -88,7 +89,10 @@ function createSingleQuoteToolbar() {
   let a = document.createElement('a');
   a.href = '#';
   a.title = 'Random quote';
-  a.addEventListener('click', showRandomQuote);
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    showRandomQuote();
+  });
 
   let i = document.createElement('i');
   i.className = 'fas fa-random fa-fw';
@@ -191,35 +195,46 @@ function showQuote(id = null) {
 
 function showRandomQuote() {
   showQuote('random');
-  return false;
 }
 
 function showAuthors() {
   callAPI('authors', createAuthor, 'Authors', 'Could not find authors');
-  return false;
 }
 
 function showQuotesByAuthor(author = null) {
   const path = 'quotes' + (author ? ('?author=' + author) : '');
   callAPI(path, createQuote, 'Quotes by author', 'Could not find quotes');
-  return false;
 }
 
 function showAbout() {
   const div = document.createElement('div');
   div.innerHTML = '<p>&copy; 2020 Magnus Leksell</p><p><a href="https://leksell.io/">https://leksell.io</a></p>';
   showCenteredItem('About', div);
-  return false;
-}
+} 
 
 // When DOM loaded show a quote and add some event listeners
 window.addEventListener('DOMContentLoaded', () => {
     showQuote();
 
-    document.getElementById('toggle-link').addEventListener('click', toggleMenu);
-    document.getElementById('quote-link').addEventListener('click', showRandomQuote);
-    document.getElementById('authors-link').addEventListener('click', showAuthors);
-    document.getElementById('about-link').addEventListener('click', showAbout);
+    document.getElementById('toggle-link').addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleMenu();
+    });
+
+    document.getElementById('quote-link').addEventListener('click', (e) => {
+        e.preventDefault();
+        showRandomQuote();
+    });
+
+    document.getElementById('authors-link').addEventListener('click', (e) => {
+        e.preventDefault();
+        showAuthors()
+    });
+
+    document.getElementById('about-link').addEventListener('click', (e) => {
+        e.preventDefault();
+        showAbout();
+    });
 
     document.forms["search"].addEventListener('submit', function (e) {
         e.preventDefault();
