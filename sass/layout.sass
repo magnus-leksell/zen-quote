@@ -56,7 +56,7 @@ body
   transition: background-color 200ms ease
 
   &:hover
-    background-color: rgba($nav-bg-color, 0.8)
+    background-color: $nav-bg-color
 
 a
   color: $default-color
@@ -127,7 +127,7 @@ a
     margin: 6px 6px
     padding: 6px 6px
     text-decoration: none
-    background-color: rgba($nav-bg-color, 0.9)
+    background-color: $nav-bg-color
     -webkit-border-radius: 6px
     -moz-border-radius: 6px
     border-radius: 6px
@@ -143,10 +143,6 @@ a
 
     &:hover
       color: $link-hover-color
-
-#toggle-link
-  &.bg
-    background-color: transparent
 
 #rotate
   -webkit-transition: transform 200ms linear
@@ -182,7 +178,7 @@ a
     transform: translateY(0)
 
 .topnav-bg
-  background-color: rgba($nav-bg-color, 0.9)
+  background-color: $nav-bg-color
 
 .topnav
   overflow: hidden
@@ -266,13 +262,7 @@ a
   width: 440px
 
 .transbox-bg
-  background-color: rgba($nav-bg-color, 0.8)
-
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) 
-  .transbox-bg
-    -webkit-backdrop-filter: saturate(100%) blur(20px)
-    backdrop-filter: saturate(100%) blur(20px)
-    background-color: rgba($nav-bg-color, 0.7)
+  background-color: $nav-bg-color
 
 .quote
   display: inline-block
