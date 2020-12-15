@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const compression = require('compression');
+const helmet = require('helmet');
 
 const swaggerUi = require('swagger-ui-express');
 const openApiDocumentation = require('./docs/openapi');
@@ -14,6 +15,7 @@ app.use(logger('[:date[clf]] :method :url :status :res[content-length] - :respon
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(compression());
+app.disable('x-powered-by');
 
 // routes
 app.use('/', express.static(path.join(__dirname, 'public')));
