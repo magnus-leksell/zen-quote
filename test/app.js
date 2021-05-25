@@ -12,7 +12,7 @@ describe('#API server', () => {
             .get('/api/authors')
             .end((err, res) => {
                 expect(res).to.have.status(200);
-                expect(res.body).to.be.an('array').and.have.length(214);
+                expect(res.body).to.be.an('array').and.have.length(321);
 
                 done();
             });
