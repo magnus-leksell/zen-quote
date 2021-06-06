@@ -175,7 +175,7 @@ id | Integer | Primary key
 author | Text | Name of author
 quote | Text | Quote text
 
-There are 1750 quotes from about 323 different authors in the database.
+There are 2138 quotes from about 335 different authors in the database.
 
 ## Author
 
