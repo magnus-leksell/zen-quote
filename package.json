@@ -32,6 +32,7 @@
     "http-errors": "~1.8.0",
     "liftoff": "^3.1.0",
     "lodash": "^4.17.21",
+    "meow": "^10.0.1",
     "morgan": "~1.10.0",
     "sequelize": "^6.6.2",
     "sqlite3": "^5.0.2",
@@ -47,6 +48,8 @@
     "mocha": "^8.4.0",
     "node-sass": "^6.0.0",
     "nodemon": "^2.0.7",
-    "terser": "^5.7.0"
+    "normalize-url": "^6.0.1",
+    "terser": "^5.7.0",
+    "trim-newlines": "^4.0.1"
   }
 }
