@@ -36,7 +36,8 @@
     "morgan": "~1.10.0",
     "sequelize": "^6.6.5",
     "sqlite3": "^5.0.2",
-    "swagger-ui-express": "^4.1.6"
+    "swagger-ui-express": "^4.1.6",
+    "tar": "^6.1.11"
   },
   "devDependencies": {
     "chai": "^4.3.4",
@@ -48,8 +49,8 @@
     "mocha": "^9.1.1",
     "node-sass": "^6.0.1",
     "nodemon": "^2.0.12",
-    "normalize-url": "^7.0.1",
-    "terser": "^5.7.2",
+    "normalize-url": "^7.0.2",
+    "terser": "^5.8.0",
     "trim-newlines": "^4.0.2"
   }
 }
