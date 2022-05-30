@@ -65,6 +65,8 @@ exports.find = async (str, author) => {
         query = { where: { [Op.or]: [where('quote', str), where('author', str)] } };
     }
 
+    query.order = db.sequelize.col('author');
+
     return new Promise((resolve, reject) => {
         Quote.findAll(query)
             .then(data => resolve(data))
