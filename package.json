@@ -35,7 +35,7 @@
     "meow": "^11.0.0",
     "morgan": "~1.10.0",
     "node-gyp": "^9.3.0",
-    "sequelize": "^6.25.1",
+    "sequelize": "^6.25.3",
     "sqlite3": "^5.1.2",
     "swagger-ui-express": "^4.5.0",
     "tar": "^6.1.11"
@@ -47,7 +47,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-sass": "^3.1.0",
     "grunt-terser": "^2.0.0",
-    "mocha": "^10.0.0",
+    "mocha": "^10.1.0",
     "node-sass": "^7.0.3",
     "nodemon": "^2.0.20",
     "normalize-url": "^7.2.0",
