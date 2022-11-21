@@ -17,20 +17,23 @@ module.exports = function (grunt) {
                 outputStyle: 'compressed'
             },
             public: {
+		options: {
+                    outputStyle: 'expanded'
+                },
                 files: {
                     'public/css/zen.css': 'sass/index.sass'
                 }
             },
             build: {
                 files: {
-                    'build/static/css/zen.css': 'sass/index.sass'
+                    'build/static/css/zen.min.css': 'sass/index.sass'
                 }
             }
         },
         terser: {
             build: {
                 files: {
-                    'build/static/scripts/zen.js': 'public/scripts/zen.js'
+                    'build/static/scripts/zen.min.js': 'public/scripts/zen.js'
                 }
             }
         }
