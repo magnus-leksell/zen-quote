@@ -13,20 +13,22 @@ module.exports = function (grunt) {
         sass: {
             options: {
                 implementation: sass,
-                includePaths: ['sass'],
-                outputStyle: 'compressed'
+                includePaths: ['sass']
             },
             public: {
-		options: {
-                    outputStyle: 'expanded'
-                },
                 files: {
                     'public/css/zen.css': 'sass/index.sass'
+                },
+		options: {
+                    outputStyle: 'expanded'
                 }
             },
             build: {
                 files: {
                     'build/static/css/zen.min.css': 'sass/index.sass'
+                },
+		options: {
+                    outputStyle: 'compressed'
                 }
             }
         },
