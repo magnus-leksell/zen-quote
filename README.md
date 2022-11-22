@@ -61,7 +61,7 @@ Changes made in any of the files in the `sass` folder requires constructing the 
 $ npm run build-css
 ```
 
-which will construct and minimize `public/css/zen.css`.
+which will construct `public/css/zen.css`.
 
 #### Build static files for production
 
