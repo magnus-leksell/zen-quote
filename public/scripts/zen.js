@@ -208,6 +208,7 @@ function showQuotesByAuthor(author = null) {
 
 function showAbout() {
   const div = document.createElement('div');
+  div.className = 'about';
   div.innerHTML = '<p>&copy; 2020 Magnus Leksell</p><p class="icon-link"><a href="https://leksell.io/" title="Home page of Magnus Leksell"><i class="fa-solid fa-house fa-fw"></i></a> <a href="https://github.com/magnus-leksell/zen-quote" title="GitHub project"><i class="fa-brands fa-github fa-fw"></i></a></p>';
   showCenteredItem('About', div);
 } 
