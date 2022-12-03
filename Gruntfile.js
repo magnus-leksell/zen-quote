@@ -4,12 +4,33 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        copy: {
+        replace: {
+            dist: {
+              options: {
+                patterns: [
+                  {
+                    match: 'zen.',
+                    replacement: 'zen.min.'
+                  }
+                ],
+                usePrefix: false
+              },
+              files: [
+                {
+                  expand: true,
+                  flatten: true,
+                  src: ['public/index.html'],
+                  dest: 'build/static/'
+                }
+              ]
+            }
+        },
+        /*copy: {
             html: {
                 src: 'public/index.html',
                 dest: 'build/static/index.html'
             }
-        },
+        },*/
         sass: {
             options: {
                 implementation: sass,
@@ -25,7 +46,7 @@ module.exports = function (grunt) {
             },
             build: {
                 files: {
-                    'build/static/css/zen.css': 'sass/index.sass'
+                    'build/static/css/zen.min.css': 'sass/index.sass'
                 },
 		options: {
                     outputStyle: 'compressed'
@@ -35,13 +56,14 @@ module.exports = function (grunt) {
         terser: {
             build: {
                 files: {
-                    'build/static/scripts/zen.js': 'public/scripts/zen.js'
+                    'build/static/scripts/zen.min.js': 'public/scripts/zen.js'
                 }
             }
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-copy');
+    //grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-terser');
 
@@ -49,5 +71,5 @@ module.exports = function (grunt) {
     grunt.registerTask('build-css', ['sass:public']);
 
     // Default task(s)
-    grunt.registerTask('default', ['copy', 'sass', 'terser']);
+    grunt.registerTask('default', ['replace', 'sass', 'terser']);
 };
