@@ -25,12 +25,6 @@ module.exports = function (grunt) {
               ]
             }
         },
-        /*copy: {
-            html: {
-                src: 'public/index.html',
-                dest: 'build/static/index.html'
-            }
-        },*/
         sass: {
             options: {
                 implementation: sass,
@@ -62,7 +56,6 @@ module.exports = function (grunt) {
         }
     });
 
-    //grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-terser');
