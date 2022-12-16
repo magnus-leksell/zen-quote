@@ -35,10 +35,10 @@
     "meow": "^11.0.0",
     "morgan": "~1.10.0",
     "node-gyp": "^9.3.0",
-    "sequelize": "^6.26.0",
-    "sqlite3": "^5.1.2",
+    "sequelize": "^6.27.0",
+    "sqlite3": "^5.1.4",
     "swagger-ui-express": "^4.6.0",
-    "tar": "^6.1.12"
+    "tar": "^6.1.13"
   },
   "devDependencies": {
     "chai": "^4.3.7",
@@ -47,7 +47,7 @@
     "grunt-replace": "^2.0.2",
     "grunt-sass": "^3.1.0",
     "grunt-terser": "^2.0.0",
-    "mocha": "^10.1.0",
+    "mocha": "^10.2.0",
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.20",
     "normalize-url": "^8.0.0",
