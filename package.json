@@ -35,7 +35,7 @@
     "meow": "^11.0.0",
     "morgan": "~1.10.0",
     "node-gyp": "^9.3.1",
-    "sequelize": "^6.29.3",
+    "sequelize": "^6.30.0",
     "sqlite3": "^5.1.6",
     "swagger-ui-express": "^4.6.2",
     "tar": "^6.1.13"
@@ -49,9 +49,9 @@
     "grunt-terser": "^2.0.0",
     "mocha": "^10.2.0",
     "node-sass": "^8.0.0",
-    "nodemon": "^2.0.21",
+    "nodemon": "^2.0.22",
     "normalize-url": "^8.0.0",
-    "terser": "^5.16.6",
-    "trim-newlines": "^4.0.2"
+    "terser": "^5.16.8",
+    "trim-newlines": "^5.0.0"
   }
 }
