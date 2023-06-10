@@ -28,30 +28,30 @@
     "compression": "^1.7.4",
     "debug": "^4.3.4",
     "express": "~4.18.2",
-    "helmet": "^6.0.1",
+    "helmet": "^7.0.0",
     "http-errors": "~2.0.0",
     "liftoff": "^4.0.0",
     "lodash": "^4.17.21",
-    "meow": "^11.0.0",
+    "meow": "^12.0.1",
     "morgan": "~1.10.0",
     "node-gyp": "^9.3.1",
-    "sequelize": "^6.30.0",
+    "sequelize": "^6.32.0",
     "sqlite3": "^5.1.6",
-    "swagger-ui-express": "^4.6.2",
-    "tar": "^6.1.13"
+    "swagger-ui-express": "^4.6.3",
+    "tar": "^6.1.15"
   },
   "devDependencies": {
     "chai": "^4.3.7",
-    "chai-http": "^4.3.0",
+    "chai-http": "^4.4.0",
     "grunt": "^1.6.1",
     "grunt-replace": "^2.0.2",
     "grunt-sass": "^3.1.0",
     "grunt-terser": "^2.0.0",
     "mocha": "^10.2.0",
-    "node-sass": "^8.0.0",
+    "node-sass": "^9.0.0",
     "nodemon": "^2.0.22",
     "normalize-url": "^8.0.0",
-    "terser": "^5.16.8",
+    "terser": "^5.17.7",
     "trim-newlines": "^5.0.0"
   }
 }
