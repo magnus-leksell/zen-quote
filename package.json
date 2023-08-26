@@ -32,16 +32,16 @@
     "http-errors": "~2.0.0",
     "liftoff": "^4.0.0",
     "lodash": "^4.17.21",
-    "meow": "^12.0.1",
+    "meow": "^12.1.0",
     "morgan": "~1.10.0",
     "node-gyp": "^9.4.0",
     "sequelize": "^6.32.1",
     "sqlite3": "^5.1.6",
-    "swagger-ui-express": "^4.6.3",
+    "swagger-ui-express": "^5.0.0",
     "tar": "^6.1.15"
   },
   "devDependencies": {
-    "chai": "^4.3.7",
+    "chai": "^4.3.8",
     "chai-http": "^4.4.0",
     "grunt": "^1.6.1",
     "grunt-replace": "^2.0.2",
@@ -49,9 +49,9 @@
     "grunt-terser": "^2.0.0",
     "mocha": "^10.2.0",
     "node-sass": "^9.0.0",
-    "nodemon": "^2.0.22",
+    "nodemon": "^3.0.1",
     "normalize-url": "^8.0.0",
-    "terser": "^5.18.1",
+    "terser": "^5.19.2",
     "trim-newlines": "^5.0.0"
   }
 }
